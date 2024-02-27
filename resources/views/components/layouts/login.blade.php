@@ -20,7 +20,45 @@
     <link href="{{asset('assets/admin/css/icons.min.css"')}} rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <div class="auth-fluid">
+        
+            <!-- Auth fluid right content -->
+            <div class="auth-fluid-right text-center">
+                <div class="auth-user-testimonial">
+                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h2 class="mb-3">Welcome to Tripti Admin</h2>
+                                <p class="lead"><i class="ri-double-quotes-l"></i>Everything you need is in this template. Love the overall look and feel. Not too flashy, and still very professional and smart.
+                                </p>
+                                <p>
+                                    - Admin User
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="mb-3">Graphical Dashboard</h2>
+                                <p class="lead"><i class="ri-double-quotes-l"></i> Pretty nice theme, hoping you guys could add more features to this. Keep up the good work.
+                                </p>
+                                <p>
+                                    - Admin User
+                                </p>
+                            </div>
+                            <div class="carousel-item">
+                                <h2 class="mb-3">Update the tourism</h2>
+                                <p class="lead"><i class="ri-double-quotes-l"></i> This is a great product, helped us a lot and very quick to work with and implement.
+                                </p>
+                                <p>
+                                    - Admin User
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end auth-user-testimonial-->
+            </div>
+            <!-- end Auth fluid right content -->
         {{ $slot }}
+
+    </div>
 
         @livewireScripts
 

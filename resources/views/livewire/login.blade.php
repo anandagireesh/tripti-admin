@@ -1,53 +1,15 @@
-<div>
-    <div class="auth-fluid">
-        
-        <!-- Auth fluid right content -->
-        <div class="auth-fluid-right text-center">
-            <div class="auth-user-testimonial">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <h2 class="mb-3">Welcome to Tripti Admin</h2>
-                            <p class="lead"><i class="ri-double-quotes-l"></i>Everything you need is in this template. Love the overall look and feel. Not too flashy, and still very professional and smart.
-                            </p>
-                            <p>
-                                - Admin User
-                            </p>
-                        </div>
-                        <div class="carousel-item">
-                            <h2 class="mb-3">Graphical Dashboard</h2>
-                            <p class="lead"><i class="ri-double-quotes-l"></i> Pretty nice theme, hoping you guys could add more features to this. Keep up the good work.
-                            </p>
-                            <p>
-                                - Admin User
-                            </p>
-                        </div>
-                        <div class="carousel-item">
-                            <h2 class="mb-3">Update the tourism</h2>
-                            <p class="lead"><i class="ri-double-quotes-l"></i> This is a great product, helped us a lot and very quick to work with and implement.
-                            </p>
-                            <p>
-                                - Admin User
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end auth-user-testimonial-->
-        </div>
-        <!-- end Auth fluid right content -->
-
-        <!--Auth fluid left content -->
         <div class="auth-fluid-form-box">
-            
             <div class="card-body d-flex flex-column h-100 gap-3">
 
                 <!-- Logo -->
                 <div class="auth-brand text-center text-lg-start">
-                    <a href="{{url('/')}}" class="logo-dark">
-                        <span><img src="{{asset('assets/admin/images/logo-dark.png')}}" alt="dark logo" height="24"></span>
+                    <a href="{{ url('/') }}" class="logo-dark">
+                        <span><img src="{{ asset('assets/admin/images/logo-dark.png') }}" alt="dark logo"
+                                height="24"></span>
                     </a>
-                    <a href="{{url('/')}}" class="logo-light">
-                        <span><img src="{{asset('assets/admin/images/logo.png')}}" alt="logo" height="24"></span>
+                    <a href="{{ url('/') }}" class="logo-light">
+                        <span><img src="{{ asset('assets/admin/images/logo.png') }}" alt="logo"
+                                height="24"></span>
                     </a>
                 </div>
 
@@ -58,32 +20,52 @@
 
                     <!-- form -->
                     <form wire:submit="userLogin">
-                        <div>@error('success')<div class="alert alert-danger d-flex align-items-center" role="alert">
-                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                            <div>
-                                {{ $message }}
-                            </div>
-                          </div> </p> @enderror</div>
-                       
-                        <div class="mb-3">
-                            <label for="emailaddress" class="form-label">Email address</label>
-                            <input class="form-control" type="email" wire:model="email" id="emailaddress" placeholder="Enter your email">
-                            <div>@error('email')<p class="text-danger">{{ $message }} </p> @enderror</div>
+                        <div>
+                            @error('success')
+                                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
+                                        aria-label="Danger:">
+                                        <use xlink:href="#exclamation-triangle-fill" />
+                                    </svg>
+                                    <div>
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                </p>
+                            @enderror
                         </div>
                         <div class="mb-3">
-                            <a href="auth-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>
+                            <label for="emailaddress" class="form-label">Email address</label>
+                            <input class="form-control" type="email" wire:model="email" id="emailaddress"
+                                placeholder="Enter your email">
+                            <div>
+                                @error('email')
+                                    <p class="text-danger">{{ $message }} </p>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <a href="auth-recoverpw-2.html" class="text-muted float-end"><small>Forgot your
+                                    password?</small></a>
                             <label for="password" class="form-label">Password</label>
-                            <input class="form-control" type="password" wire:model="password" id="password" placeholder="Enter your password">
-                            <div>@error('password') <p class="text-danger">{{ $message }} </p> @enderror</div>
+                            <input class="form-control" type="password" wire:model="password" id="password"
+                                placeholder="Enter your password">
+                            <div>
+                                @error('password')
+                                    <p class="text-danger">{{ $message }} </p>
+                                @enderror
+                            </div>
                         </div>
                         <div class="mb-3">
                             <div class="form-check">
-                                <input type="checkbox" wire:model="rememberMe" class="form-check-input" id="checkbox-signin">
-                                <label class="form-check-label"  for="checkbox-signin">Remember me</label>
+                                <input type="checkbox" wire:model="rememberMe" class="form-check-input"
+                                    id="checkbox-signin">
+                                <label class="form-check-label" for="checkbox-signin">Remember me</label>
                             </div>
                         </div>
                         <div class="d-grid mb-0 text-center">
-                            <button class="btn btn-primary" type="submit"><i class="ri-login-box-line"></i> Log In </button>
+                            <button class="btn btn-primary" type="submit"><i class="ri-login-box-line"></i> Log In
+                            </button>
                         </div>
                         <!-- social-->
                         {{-- <div class="text-center mt-4">
@@ -111,6 +93,3 @@
 
             </div> <!-- end .card-body -->
         </div>
-        <!-- end auth-fluid-form-box-->
-    </div>
-</div>
