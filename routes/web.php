@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login; 
+use App\Livewire\Admin\Dashboard; 
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user-login', Login::class);
+Route::get('user-login', Login::class)->middleware('isUserLogin');
+Route::middleware(['authenticatedUser'])->group(function () {
+Route::get('dashboard',Dashboard::class);
+});

@@ -43,10 +43,10 @@
 
                 <!-- Logo -->
                 <div class="auth-brand text-center text-lg-start">
-                    <a href="index.html" class="logo-dark">
+                    <a href="{{url('/')}}" class="logo-dark">
                         <span><img src="{{asset('assets/admin/images/logo-dark.png')}}" alt="dark logo" height="24"></span>
                     </a>
-                    <a href="index.html" class="logo-light">
+                    <a href="{{url('/')}}" class="logo-light">
                         <span><img src="{{asset('assets/admin/images/logo.png')}}" alt="logo" height="24"></span>
                     </a>
                 </div>
@@ -57,20 +57,29 @@
                     <p class="text-muted mb-4">Enter your email address and password to access account.</p>
 
                     <!-- form -->
-                    <form action="#">
+                    <form wire:submit="userLogin">
+                        <div>@error('success')<div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                            <div>
+                                {{ $message }}
+                            </div>
+                          </div> </p> @enderror</div>
+                       
                         <div class="mb-3">
                             <label for="emailaddress" class="form-label">Email address</label>
-                            <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                            <input class="form-control" type="email" wire:model="email" id="emailaddress" placeholder="Enter your email">
+                            <div>@error('email')<p class="text-danger">{{ $message }} </p> @enderror</div>
                         </div>
                         <div class="mb-3">
                             <a href="auth-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>
                             <label for="password" class="form-label">Password</label>
-                            <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                            <input class="form-control" type="password" wire:model="password" id="password" placeholder="Enter your password">
+                            <div>@error('password') <p class="text-danger">{{ $message }} </p> @enderror</div>
                         </div>
                         <div class="mb-3">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="checkbox-signin">
-                                <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                <input type="checkbox" wire:model="rememberMe" class="form-check-input" id="checkbox-signin">
+                                <label class="form-check-label"  for="checkbox-signin">Remember me</label>
                             </div>
                         </div>
                         <div class="d-grid mb-0 text-center">
