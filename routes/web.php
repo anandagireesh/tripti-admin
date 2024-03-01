@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login; 
 use App\Livewire\Admin\Dashboard; 
+use App\Livewire\Admin\Section\ForgetPassword;
+use App\Livewire\Admin\Section\VerifyOtp;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,8 @@ Route::get('/', function () {
 });
 
 Route::get('user-login', Login::class)->middleware('isUserLogin');
+Route::get('forget-password', ForgetPassword::class)->middleware('isUserLogin');
+Route::get('verify-otp', VerifyOtp::class)->middleware('isUserLogin');
 Route::middleware(['authenticatedUser'])->group(function () {
 Route::get('dashboard',Dashboard::class);
 });

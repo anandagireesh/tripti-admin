@@ -28,7 +28,7 @@
                                         <use xlink:href="#exclamation-triangle-fill" />
                                     </svg>
                                     <div>
-                                        {{ $message }}
+                                        test
                                     </div>
                                 </div>
                                 </p>
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <a href="auth-recoverpw-2.html" class="text-muted float-end"><small>Forgot your
+                            <a href="{{url('forget-password')}}" class="text-muted float-end"><small>Forgot your
                                     password?</small></a>
                             <label for="password" class="form-label">Password</label>
                             <input class="form-control" type="password" wire:model="password" id="password"
