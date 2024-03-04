@@ -35,6 +35,7 @@
                             @enderror
                         </div>
                 </div>
+                <x-countdown :expires="$date"/>
                 <div class="mb-0 text-center d-grid">
                     <button class="btn btn-primary" type="submit">Reset Password </button>
                 </div>

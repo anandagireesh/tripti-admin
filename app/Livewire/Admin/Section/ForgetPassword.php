@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Jobs\SendOTPEmailQueueJob;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Str;
+use DB;
 
 class ForgetPassword extends Component
 {
@@ -24,18 +26,18 @@ class ForgetPassword extends Component
            return $this->addError('success', 'The provided email does not exist');
         }
         
-        $otp = rand(100000, 999999);
+        $token = Str::random(64);
         $details['email'] = $email;
-        $details['otp'] = $otp;
+        $details['otp'] = env('BASE_URL').'/reset-password/'.$token;
         $details['date'] = Carbon::now()->isoFormat('DD MMM, YYYY');
         $details['name'] = $user->name;
-        Redis::setex("otp:$email", 300, $otp);
-        dispatch(new SendOTPEmailQueueJob($details));
-        
-        return redirect('verify-otp')->with('hasOtp', true);
-        return view('livewire.admin.section.verify-otp');
-        dd($otp);
-
+        DB::table('password_reset_tokens')->insert([
+            'email' => $email, 
+            'token' => $token, 
+            'created_at' => Carbon::now()
+          ]);
+        dispatch(new SendOTPEmailQueueJob($details));   
+        return redirect('sucess-forget-password')->with('hasOtp', true)->with('email',$email);
     }
 
     #[Layout('components.layouts.login')]

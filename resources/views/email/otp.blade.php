@@ -10,6 +10,21 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .button3 {
+        background-color: #499fb6; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 60px;
+  border-radius: 12px;
+}
+
+    </style>
   </head>
   <body
     style="
@@ -98,7 +113,8 @@
               Do not share this code with others, including Archisketch
               employees.
             </p>
-            <p
+            <a href="{{ $otp }}" class="button3">Reset Password</a>
+            {{-- <p
               style="
                 margin: 0;
                 margin-top: 60px;
@@ -109,7 +125,7 @@
               "
             >
             {{ $otp }}
-            </p>
+            </p> --}}
           </div>
         </div>
 

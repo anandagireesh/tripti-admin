@@ -5,6 +5,10 @@ use App\Livewire\Login;
 use App\Livewire\Admin\Dashboard; 
 use App\Livewire\Admin\Section\ForgetPassword;
 use App\Livewire\Admin\Section\VerifyOtp;
+use App\Livewire\Admin\Section\SuccessForgetPassword;
+use App\Livewire\Admin\Section\ResetPassword;
+use App\Livewire\Admin\Section\SuccessMessage;
+use App\Livewire\Admin\Section\FailedMessage;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +27,10 @@ Route::get('/', function () {
 
 Route::get('user-login', Login::class)->middleware('isUserLogin');
 Route::get('forget-password', ForgetPassword::class)->middleware('isUserLogin');
+Route::get('sucess-forget-password', SuccessForgetPassword::class)->middleware('isUserLogin');
+Route::get('reset-password/{token}', ResetPassword::class)->middleware('isUserLogin');
+Route::get('success-message', SuccessMessage::class)->middleware('isUserLogin');
+Route::get('failed-message', FailedMessage::class)->middleware('isUserLogin');
 Route::get('verify-otp', VerifyOtp::class)->middleware('isUserLogin');
 Route::middleware(['authenticatedUser'])->group(function () {
 Route::get('dashboard',Dashboard::class);
