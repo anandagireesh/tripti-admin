@@ -9,6 +9,8 @@ use App\Livewire\Admin\Section\SuccessForgetPassword;
 use App\Livewire\Admin\Section\ResetPassword;
 use App\Livewire\Admin\Section\SuccessMessage;
 use App\Livewire\Admin\Section\FailedMessage;
+use App\Livewire\Admin\Pages\TouristPlace;
+use App\Livewire\Admin\Pages\MyProfile;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,10 @@ Route::get('reset-password/{token}', ResetPassword::class)->middleware('isUserLo
 Route::get('success-message', SuccessMessage::class)->middleware('isUserLogin');
 Route::get('failed-message', FailedMessage::class)->middleware('isUserLogin');
 Route::get('verify-otp', VerifyOtp::class)->middleware('isUserLogin');
+
+
 Route::middleware(['authenticatedUser'])->group(function () {
 Route::get('dashboard',Dashboard::class);
+Route::get('tourist-places',TouristPlace::class);
+Route::get('my-account',MyProfile::class);
 });
