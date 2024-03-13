@@ -2,7 +2,7 @@
     <form wire:submit="updateAccountDetail">
         <h5 class="mb-4 text-uppercase"><i class="ri-contacts-book-2-line me-1"></i> Personal Info</h5>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="mb-3">
                     <label for="firstname" class="form-label">Name</label>
                     <input type="text" class="form-control" id="firstname" wire:model="name" placeholder="Enter first name">
@@ -13,12 +13,17 @@
                     @enderror
                 </div>
             </div>
-            {{-- <div class="col-md-6">
+            <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="lastname" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" placeholder="Enter last name">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="phone" wire:model="phone" placeholder="Enter phone">
                 </div>
-            </div> <!-- end col --> --}}
+                <div>
+                    @error('phone')
+                        <p class="text-danger">{{ $message }} </p>
+                    @enderror
+                </div>
+            </div> <!-- end col -->
         </div> <!-- end row -->
 
         <div class="row">
