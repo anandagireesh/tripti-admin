@@ -55,13 +55,33 @@
                 <li class="side-nav-title mt-1"> Main</li>
 
                 <li class="side-nav-item">
-                    <a href="index.html" class="side-nav-link">
+                    <a href="{{url('dashboard')}}" class="side-nav-link">
                         <i class="ri-dashboard-2-fill"></i>
                         <span class="badge bg-success float-end">9+</span>
                         <span> Dashboard </span>
                     </a>
                 </li>
+                <li class="side-nav-item">
+                    <a href="{{url('tourist-places')}}" class="side-nav-link">
+                        <i class="ri-briefcase-4-fill"></i>
+                        <span class="badge bg-success float-end">9+</span>
+                        <span> Tourist places </span>
+                    </a>
+                </li>
 
+                <li class="side-nav-title mt-1"> Settings</li>
+                <li class="side-nav-item">
+                    <a href="{{url('my-account')}}" class="side-nav-link">
+                        <i class="ri-briefcase-4-fill"></i>
+                        <span> My Account </span>
+                    </a>
+                </li>
+                <li class="side-nav-item">
+                    <a href="{{url('tourist-places')}}" class="side-nav-link">
+                        <i class="ri-briefcase-4-fill"></i>
+                        <span> Tourist Category </span>
+                    </a>
+                </li>
 
             </ul>
             <!--- End Sidemenu -->
