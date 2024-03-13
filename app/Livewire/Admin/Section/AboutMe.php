@@ -17,7 +17,7 @@ class AboutMe extends Component
     {
         $this->name = Auth::user()->name;
         $this->role = Auth::user()->role;
-        $this->phone = '+91 9072494129';
+        $this->phone = AUTH::user()->phone;
         $this->email = Auth::user()->email;
         $this->bio = Auth::user()->bio;
 

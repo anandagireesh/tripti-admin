@@ -39,6 +39,9 @@ class PersonalInfo extends Component
     #[Validate('sometimes|url:http,https')] 
     public $linkedin='';
 
+    #[Validate('sometimes|regex:/^[0-9\+-]+$/i')] 
+    public $phone='';
+
     public function updateAccountDetail(){
         $this->validate();
         User::where('id',Auth::user()->id)->update($this->all());
@@ -55,6 +58,7 @@ class PersonalInfo extends Component
         $this->twitter = AUTH::user()->twitter;
         $this->instagram = AUTH::user()->instagram;
         $this->linkedin = AUTH::user()->linkedin;
+        $this->phone = AUTH::user()->phone;
     }
 
     public function render()
