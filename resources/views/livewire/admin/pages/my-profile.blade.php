@@ -22,12 +22,12 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <livewire:admin.section.settings-menu />
+                                {{-- <livewire:admin.section.settings-menu /> --}}
                                 <div class="tab-content">
 
 
                                     <livewire:admin.section.personal-info />
-                                    <livewire:admin.section.tourist-category />
+                                    {{-- <livewire:admin.section.tourist-category /> --}}
 
                                 </div> <!-- end tab-content -->
                             </div> <!-- end card body -->
