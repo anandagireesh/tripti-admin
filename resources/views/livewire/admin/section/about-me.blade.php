@@ -23,19 +23,22 @@
             {{-- <p class="text-muted mb-1"><strong>Location :</strong> <span class="ms-2">USA</span></p> --}}
         </div>
 
-        {{-- <ul class="social-list list-inline mt-3 mb-0">
+        <ul class="social-list list-inline mt-3 mb-0">
             <li class="list-inline-item">
-                <a href="javascript: void(0);" class="social-list-item border-primary text-primary"><i class="ri-facebook-circle-fill"></i></a>
+                <a href="{{$facebook}}" class="social-list-item border-primary text-primary"><i class="ri-facebook-circle-fill"></i></a>
             </li>
             <li class="list-inline-item">
-                <a href="javascript: void(0);" class="social-list-item border-danger text-danger"><i class="ri-google-fill"></i></a>
+                <a href="{{$instagram}}" class="social-list-item border-danger text-danger"><i class="ri-instagram-fill"></i></a>
             </li>
             <li class="list-inline-item">
-                <a href="javascript: void(0);" class="social-list-item border-info text-info"><i class="ri-twitter-fill"></i></a>
+                <a href="{{$twitter}}" class="social-list-item border-info text-info"><i class="ri-twitter-fill"></i></a>
             </li>
             <li class="list-inline-item">
-                <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="ri-github-fill"></i></a>
+                <a href="{{$linkedin}}" class="social-list-item border-secondary text-primary"><i class="ri-linkedin-fill"></i></a>
             </li>
-        </ul> --}}
+            <li class="list-inline-item">
+                <a href="{{$website}}" class="social-list-item border-dark text-dark"><i class="ri-earth-fill"></i></a>
+            </li>
+        </ul>
     </div> <!-- end card-body -->
 </div> <!-- end card -->

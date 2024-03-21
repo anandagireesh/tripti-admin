@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Login; 
-use App\Livewire\Admin\Dashboard; 
+use App\Livewire\Login;
+use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Section\ForgetPassword;
 use App\Livewire\Admin\Section\VerifyOtp;
 use App\Livewire\Admin\Section\SuccessForgetPassword;
@@ -11,6 +11,7 @@ use App\Livewire\Admin\Section\SuccessMessage;
 use App\Livewire\Admin\Section\FailedMessage;
 use App\Livewire\Admin\Pages\TouristPlace;
 use App\Livewire\Admin\Pages\MyProfile;
+use App\Livewire\Admin\Pages\TouristSettings;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,5 @@ Route::middleware(['authenticatedUser'])->group(function () {
 Route::get('dashboard',Dashboard::class);
 Route::get('tourist-places',TouristPlace::class);
 Route::get('my-account',MyProfile::class);
+Route::get('tourist-category',TouristSettings::class);
 });

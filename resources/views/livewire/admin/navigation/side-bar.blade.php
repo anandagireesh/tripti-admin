@@ -64,7 +64,6 @@
                 <li class="side-nav-item">
                     <a href="{{url('tourist-places')}}" class="side-nav-link">
                         <i class="ri-briefcase-4-fill"></i>
-                        <span class="badge bg-success float-end">9+</span>
                         <span> Tourist places </span>
                     </a>
                 </li>
@@ -77,12 +76,11 @@
                     </a>
                 </li>
                 <li class="side-nav-item">
-                    <a href="{{url('tourist-places')}}" class="side-nav-link">
+                    <a href="{{url('tourist-category')}}" class="side-nav-link">
                         <i class="ri-briefcase-4-fill"></i>
                         <span> Tourist Category </span>
                     </a>
                 </li>
-
             </ul>
             <!--- End Sidemenu -->
 

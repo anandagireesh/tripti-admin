@@ -11,7 +11,7 @@
                 <livewire:admin.navigation.breadcrumb :breadTitle="$breadTitle" />
 
                 <div class="row">
-                    <livewire:admin.section.tourist-places />
+                    <livewire:admin.section.tourist-category />
                 </div>
                 <!-- end row-->
 

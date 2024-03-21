@@ -44,7 +44,7 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="useremail" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" id="useremail" wire:model="email" placeholder="Enter email">
+                    <input type="email" class="form-control" disabled id="useremail" wire:model="email" placeholder="Enter email">
                     {{-- <span class="form-text text-muted"><small>If you want to change email please <a href="javascript: void(0);">click</a> here.</small></span> --}}
                 </div>
                 <div>
@@ -56,7 +56,7 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="userRole" class="form-label">Role</label>
-                    <input type="text" class="form-control" wire:model="role" id="userRole">
+                    <input type="text" disabled class="form-control" wire:model="role" id="userRole">
                     {{-- <span class="form-text text-muted"><small>If you want to change password please <a href="javascript: void(0);">click</a> here.</small></span> --}}
                 </div>
                 <div>
@@ -176,7 +176,7 @@
                 </div>
             </div> <!-- end col -->
         </div> <!-- end row --> --}}
-        
+
         <div class="text-end">
             <button type="submit" class="btn btn-success mt-2"><i class="ri-save-line"></i> Save</button>
         </div>

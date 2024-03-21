@@ -6,6 +6,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use App\Models\User;
+use App\Livewire\Admin\Section\AboutMe;
 
 class PersonalInfo extends Component
 {
@@ -45,7 +46,7 @@ class PersonalInfo extends Component
     public function updateAccountDetail(){
         $this->validate();
         User::where('id',Auth::user()->id)->update($this->all());
-        
+        $this->dispatch('refresh-about-me');        
     }
     public function mount(){
         $this->name = AUTH::user()->name;
