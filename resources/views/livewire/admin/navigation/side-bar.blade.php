@@ -64,7 +64,6 @@
                 <li class="side-nav-item">
                     <a href="{{url('tourist-places')}}" class="side-nav-link">
                         <i class="ri-briefcase-4-fill"></i>
-                        <span class="badge bg-success float-end">9+</span>
                         <span> Tourist places </span>
                     </a>
                 </li>

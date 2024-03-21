@@ -331,8 +331,8 @@
                     <div class="nav-link" id="light-dark-mode">
                         <i class="ri-moon-fill fs-22"></i>
                     </div>
-                </li> 
-                
+                </li>
+
                 <li class="d-none d-md-inline-block">
                     <a class="nav-link" href="" data-toggle="fullscreen">
                         <i class="ri-fullscreen-line fs-22"></i>
@@ -345,8 +345,8 @@
                             <img src="{{asset('assets/admin/images/users/avatar-1.jpg')}}" alt="user-image" width="32" class="rounded-circle">
                         </span>
                         <span class="d-lg-flex flex-column gap-1 d-none">
-                            <h5 class="my-0">{{Auth::user()->name}}</h5>
-                            <h6 class="my-0 fw-normal">{{Auth::user()->role}}</h6>
+                            <h5 class="my-0">{{$name}}</h5>
+                            <h6 class="my-0 fw-normal">{{$role}}</h6>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -356,7 +356,7 @@
                         </div>
 
                         <!-- item-->
-                        <a href="pages-profile.html" class="dropdown-item">
+                        <a href="{{url('my-account')}}" class="dropdown-item">
                             <i class="ri-account-circle-fill align-middle me-1"></i>
                             <span>My Account</span>
                         </a>
