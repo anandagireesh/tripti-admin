@@ -30,5 +30,7 @@
 
         <!-- App js -->
         <script src="{{asset('assets/admin/js/app.min.js')}}"></script>
+
+
     </body>
 </html>

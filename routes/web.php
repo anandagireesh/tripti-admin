@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
 use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\Pages\AddTouristPlace;
 use App\Livewire\Admin\Section\ForgetPassword;
 use App\Livewire\Admin\Section\VerifyOtp;
 use App\Livewire\Admin\Section\SuccessForgetPassword;
@@ -42,4 +43,5 @@ Route::get('dashboard',Dashboard::class);
 Route::get('tourist-places',TouristPlace::class);
 Route::get('my-account',MyProfile::class);
 Route::get('tourist-category',TouristSettings::class);
+Route::get('add-tourist-place',AddTouristPlace::class);
 });
