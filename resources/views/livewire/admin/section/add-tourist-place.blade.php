@@ -49,11 +49,11 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="useremail" class="form-label">Location</label>
-                    <input id=”autocomplete_search” name=”autocomplete_search” type=”text” class=”form-control” placeholder=”Search” />
+                    <input id="pac-input" type="text" placeholder="Enter a location" />
 
-                    <input type=text name=”lat”>
+                    <!-- <input type=text name=”lat”>
 
-                    <input type=text name=”long”>
+                    <input type=text name=”long”> -->
 
 
                     <input type="text" class="form-control" id="useremail" wire:model="location" placeholder="Enter email">
@@ -66,7 +66,11 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div id="map"></div>
+            <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <span id="place-address"></span>
+    </div>
             </div> <!-- end col -->
         </div> <!-- end row -->
 
@@ -314,55 +318,3 @@
         </div>
     </form>
 </div>
-@push('scripts')
-<script type=”text/javascript” src=”https://maps.googleapis.com/maps/api/js?key=AIzaSyAn391235p9f0r6HEjgNzfvJf87ze4U_VM&libraries=places“></script>
-    <script>
-        var map;
-        var marker;
-        var lat = 23.8103;
-        var long = 90.4125;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: lat, lng: long},
-                zoom: 8
-            });
-            marker = new google.maps.Marker({
-                position: {lat: lat, lng: long},
-                map: map,
-                draggable: true
-            });
-            google.maps.event.addListener(marker, 'dragend', function (event) {
-                document.getElementById("lat").value = this.getPosition().lat();
-                document.getElementById("long").value = this.getPosition().lng();
-            });
-        }
-    </script>
-    <script>
-
-        google.maps.event.addDomListener(window, ‘load', initialize);
-
-          function initialize() {
-
-            var input = document.getElementById(‘autocomplete_search');
-
-            var autocomplete = new google.maps.places.Autocomplete(input);
-
-            autocomplete.addListener(‘place_changed', function () {
-
-            var place = autocomplete.getPlace();
-
-            // place variable will have all the information you are looking for.
-
-            $(‘#lat').val(place.geometry[‘location'].lat());
-
-            $(‘#long').val(place.geometry[‘location'].lng());
-
-          });
-
-        }
-
-      </script>
-    {{-- <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAP_API_KEY') }}&callback=initMap" async defer></script> --}}
-
-@endpush
-
